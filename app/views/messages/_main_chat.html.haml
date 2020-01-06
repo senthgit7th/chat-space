@@ -1,0 +1,52 @@
+.main-chat
+  .main-chat__header
+    .main-chat__header__left-box
+      .main-chat__header__left-box__current-group
+        jjjj
+      .main-chat__header__left-box__member-list
+        member:
+        .main-chat__header__left-box__member-list__name
+          oooo
+    .main-chat__header__edit-btn
+      = link_to 'Edit','#' 
+  .main-chat__main-view
+    .main-chat__main-view__message
+      .main-chat__main-view__message__upper-info
+        .main-chat__main-view__message__upper-info__talker
+          aaa
+        .main-chat__main-view__message__upper-info__date
+          2020/01/01(Wed)01:00:00
+      .main-chat__main-view__message__text
+        hello world
+    .main-chat__main-view__message
+      .main-chat__main-view__message__upper-info
+        .main-chat__main-view__message__upper-info__talker
+          aaa
+        .main-chat__main-view__message__upper-info__date
+          2020/01/01(Wed)01:00:00
+      .main-chat__main-view__message__text
+        hello world
+    .main-chat__main-view__message
+      .main-chat__main-view__message__upper-info
+        .main-chat__main-view__message__upper-info__talker
+          aaa
+        .main-chat__main-view__message__upper-info__date
+          2020/01/01(Wed)01:00:00
+      .main-chat__main-view__message__text
+        hello world
+    .main-chat__main-view__message
+      .main-chat__main-view__message__upper-info
+        .main-chat__main-view__message__upper-info__talker
+          aaa
+        .main-chat__main-view__message__upper-info__date
+          2020/01/01(Wed)01:00:00
+      .main-chat__main-view__message__text
+        hello world
+  .main-chat__footer
+    %form.main-chat__footer__form
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('fas', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn"}
