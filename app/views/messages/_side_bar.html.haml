@@ -2,13 +2,13 @@
   .chat-side__header
     .chat-side__header__box
       .chat-side__header__box__user-name
-        you
+      = current_user.name
       .chat-side__header__box__icons
         .chat-side__header__box__icons__edit-user
         = link_to "#" do
           =icon('fas', 'edit')
         .chat-side__header__box__icons__new-group
-        = link_to "#" do
+        = link_to edit_user_path(current_user) do
           =icon('fas', 'cog')
   .chat-side__groups
     .group__group-name
