@@ -2,51 +2,24 @@
   .main-chat__header
     .main-chat__header__left-box
       .main-chat__header__left-box__current-group
-        jjjj
+        = @group.name
       .main-chat__header__left-box__member-list
-        member:
+        Member:
         .main-chat__header__left-box__member-list__name
-          oooo
+          = @group.users.pluck(:name).join(",")
     .main-chat__header__edit-btn
-      = link_to 'Edit','#' 
-  .main-chat__main-view
-    .main-chat__main-view__message
-      .main-chat__main-view__message__upper-info
-        .main-chat__main-view__message__upper-info__talker
-          aaa
-        .main-chat__main-view__message__upper-info__date
-          2020/01/01(Wed)01:00:00
-      .main-chat__main-view__message__text
-        hello world
-    .main-chat__main-view__message
-      .main-chat__main-view__message__upper-info
-        .main-chat__main-view__message__upper-info__talker
-          aaa
-        .main-chat__main-view__message__upper-info__date
-          2020/01/01(Wed)01:00:00
-      .main-chat__main-view__message__text
-        hello world
-    .main-chat__main-view__message
-      .main-chat__main-view__message__upper-info
-        .main-chat__main-view__message__upper-info__talker
-          aaa
-        .main-chat__main-view__message__upper-info__date
-          2020/01/01(Wed)01:00:00
-      .main-chat__main-view__message__text
-        hello world
-    .main-chat__main-view__message
-      .main-chat__main-view__message__upper-info
-        .main-chat__main-view__message__upper-info__talker
-          aaa
-        .main-chat__main-view__message__upper-info__date
-          2020/01/01(Wed)01:00:00
-      .main-chat__main-view__message__text
-        hello world
+      = link_to edit_group_path(@group.id) do
+        = "Edit"
+  .messages
+    = render @messages
+
   .main-chat__footer
-    %form.main-chat__footer__form
-      .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          = icon('fas', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn"}
+    .main-chat__footer__input-box
+      .main-chat__footer__form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+          .form__mask
+            = f.label :image, class: "input-box__image" do
+              = icon('fas', 'image', class: 'icon')
+              = f.file_field :image, class: 'input-box__image__file'
+          = f.submit 'Send', class: 'submit-btn'

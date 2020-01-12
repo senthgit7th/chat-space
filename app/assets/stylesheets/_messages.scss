@@ -113,30 +113,36 @@ $btn-color: #38aef0;
     }
   }
   //メインチャット画面
-  .main-chat__main-view {
-    background-color: #fafafa;
+  .messages {
     height: calc(100vh - 100px - 90px);
-    &__message {
-      margin-left: 40px;
-      &__upper-info {
-        padding-top: 35px;
-        display: flex;
-        &__talker {
-        color: #333;
-        font-size: 16px;
-        font-weight: bold;
+    background-color: #fafafa;
+    .main-chat__main-view {
+      box-sizing: border-box;
+      &__message {
+        margin-left: 40px;
+        &__upper-info {
+          padding-top: 35px;
+          font-size: 16px;
+          margin-bottom: 12px;
+          display: flex;
+          &__talker {
+            color: #333;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            color: #999;
+            font-size: 12px;
+            margin-left: 10px;
+          }
         }
-        &__date {
-        color: #999;
-        font-size: 12px;
-        text-align: center;
-        margin-left: 10px;
+        &__text {
+          color: #434A54;
+          font-size: 14px;
+          .lower-message__content{
+          margin-bottom: 46px;
+          }
         }
-      }
-      &__text {
-        color: #434A54;
-        font-size: 14px;
-        margin-bottom: 46px;
       }
     }
   }
@@ -145,38 +151,44 @@ $btn-color: #38aef0;
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 40px;
-    &__form {
-      display: flex;
-      .input-box {
-        width: 100%;
-        display: flex;
-        position: relative;
-        &__text {
+    &__input-box {
+      width: 100%;
+      .main-chat__footer__form {
+        .new_message {
+          display: flex;
+        }
+        .input-box__text {
           height: 50px;
           width: 100%;
           color: #434a54;
           border-style: none;
           padding: 0 40px 0 10px;
+          display: flex;
         }
-        &__image {
-          cursor: pointer;
-          font-size: 1.3rem;
-          position: absolute;
-          top: 10px;
-          right: 10px;
-          &__file {
-            display: none;
+        .form__mask{
+          position: relative;
+          float: left;
+          .input-box__image {
+            cursor: pointer;
+            font-size: 1.3rem;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            .input-box__image__file {
+              display: none;
+            }
           }
         }
-      }
-      .submit-btn {
-        width: 100px;
-        height: 50px;
-        padding: 0 30px;
-        margin-left: 15px;
-        background-color: $btn-color;
-        color: $white-color;
-        cursor: pointer;
+        .submit-btn{
+          width: 100px;
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          float: right;
+          background-color: $btn-color;
+          color: $white-color;
+          cursor: pointer;
+        }
       }
     }
   }
