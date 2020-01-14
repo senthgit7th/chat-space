@@ -55,6 +55,9 @@ $('#new_message').on('submit', function(e){
    processData: false,
    contentType: false
  })
+  .always(function(){
+    $(".submit-btn").prop("disabled", false);
+  })
   .done(function(data){
     var html = buildHTML(data);
     $('.messages').append(html);
