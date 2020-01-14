@@ -116,6 +116,7 @@ $btn-color: #38aef0;
   .messages {
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
+    overflow: scroll;
     .main-chat__main-view {
       box-sizing: border-box;
       &__message {
@@ -138,9 +139,8 @@ $btn-color: #38aef0;
         }
         &__text {
           color: #434A54;
-          font-size: 14px;
+          font-size: 16px;
           .lower-message__content{
-          margin-bottom: 46px;
           }
         }
       }
