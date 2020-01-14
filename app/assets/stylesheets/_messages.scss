@@ -116,6 +116,10 @@ $btn-color: #38aef0;
   .messages {
     height: calc(100vh - 100px - 90px);
     background-color: #fafafa;
+    overflow: scroll;
+    // grid-row: 1 / 2;
+    // grid-column: 2 / 3;
+    // position: fixed;
     .main-chat__main-view {
       box-sizing: border-box;
       &__message {
@@ -138,9 +142,8 @@ $btn-color: #38aef0;
         }
         &__text {
           color: #434A54;
-          font-size: 14px;
+          font-size: 16px;
           .lower-message__content{
-          margin-bottom: 46px;
           }
         }
       }
@@ -151,6 +154,7 @@ $btn-color: #38aef0;
     background-color: #d2d2d2;
     height: 90px;
     padding: 20px 40px;
+    // position: fixed;
     &__input-box {
       width: 100%;
       .main-chat__footer__form {
