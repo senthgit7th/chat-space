@@ -48,6 +48,7 @@ $btn-color: #38aef0;
     height: calc(100vh - 100px);
     margin: auto 0;
     padding: 20px 20px 0;
+    overflow: scroll;
     .group{
       height: 65px;
       width: 300px;
@@ -120,6 +121,7 @@ $btn-color: #38aef0;
     overflow: scroll;
     .main-chat__main-view {
       box-sizing: border-box;
+      overflow: scroll;
       &__message {
         margin-left: 40px;
         &__upper-info {
